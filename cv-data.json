@@ -19,6 +19,7 @@
         "label": "GitHub",
         "url": "https://github.com/AldrinLake"
       },
+      "personalInfo": ["Birth: 1999.05", "English: CET-6", "Certification: Software Designer (Intermediate)"],
       "education": [
         {
           "degree": "Ph.D. Student in Computer Science",
@@ -42,45 +43,45 @@
         "Efficient training and deployment of foundation models."
       ],
       "news": [
-        "2026/2.22 -- Our paper \"Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning\" is accepted by CVPR 2026. Congrats.",
-        "2026/2.22 -- Our paper \"Class-Aware Drift Compensation for Non-Uniform Semantic Shift in Continual Learning\" is accepted by CVPR (Finding) 2026. Congrats.",
+        "2026/2.22 -- Our paper \"Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning\" is accepted by **CVPR 2026**. Congrats.",
+        "2026/2.22 -- Our paper \"Class-Aware Drift Compensation for Non-Uniform Semantic Shift in Continual Learning\" is accepted by **CVPR (Finding) 2026**. Congrats.",
         "2025/12.19 -- It is a great honor that the master's thesis was awarded the Excellent Master's Thesis of Jiangxi Province.",
-        "2025/09.07 -- Our paper \"Granular Ball-Guided Disambiguation for Partial Multilabel Feature Selection via Maximum Consistency Minimum Uncertainty\" is accepted by IEEE TNNLS. Congrats."
+        "2025/09.07 -- Our paper \"Granular Ball-Guided Disambiguation for Partial Multilabel Feature Selection via Maximum Consistency Minimum Uncertainty\" is accepted by **IEEE TNNLS**. Congrats."
       ],
       "publications": [
         {
           "title": "Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning",
-          "authors": "Fankang Xu, Lu Jin, Yanpeng Sun, Shiyu Xuan, Zechao Li (Advisor)",
+          "authors": "**Fankang Xu**, Lu Jin, Yanpeng Sun, Shiyu Xuan, Zechao Li (Advisor)",
           "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition  (CVPR) 2026",
           "url": ""
         },
         {
           "title": "Class-Aware Drift Compensation for Non-Uniform Semantic Shift in Continual Learning",
-          "authors": "Fankang Xu, Lu Jin, Yanpeng Sun, Shiyu Xuan, Zechao Li (Advisor)",
+          "authors": "**Fankang Xu**, Lu Jin, Yanpeng Sun, Shiyu Xuan, Zechao Li (Advisor)",
           "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition  (CVPR-Finding) 2026",
           "url": ""
         },
         {
           "title": "Granular Ball-Guided Disambiguation for Partial Multilabel Feature Selection via Maximum Consistency Minimum Uncertainty",
-          "authors": "Fankang Xu, Wenbin Qian (Advisor), Wenhao Shu, Jintao Huang, Weiping Ding, Shuyin Xia",
+          "authors": "**Fankang Xu**, Wenbin Qian (Advisor), Wenhao Shu, Jintao Huang, Weiping Ding, Shuyin Xia",
           "venue": "IEEE transactions on neural networks and learning systems (TNNLS) 2025",
           "url": "https://ieeexplore.ieee.org/abstract/document/11215838/"
         },
         {
           "title": "Label Disambiguation-Based Feature Selection for Partial Multi-label Learning",
-          "authors": "Fankang Xu, Wenbin Qian (Advisor), Xingxing Cai, Wenhao Shu, Jintao Huang, Yiu-Ming Cheung, Weiping Ding",
+          "authors": "**Fankang Xu**, Wenbin Qian (Advisor), Xingxing Cai, Wenhao Shu, Jintao Huang, Yiu-Ming Cheung, Weiping Ding",
           "venue": "International Conference on Pattern Recognition (ICPR) 2024",
           "url": "https://link.springer.com/chapter/10.1007/978-3-031-78183-4_17"
         },
         {
           "title": "A novel granular ball computing-based fuzzy rough set for feature selection in label distribution learning",
-          "authors": "Wenbin Qian (Advisor), Fankang Xu, Jintao Huang, Jin Qian",
+          "authors": "Wenbin Qian (Advisor), **Fankang Xu**, Jintao Huang, Jin Qian",
           "venue": "Knowledge-Based Systems (KBS) 2023",
           "url": "https://www.sciencedirect.com/science/article/pii/S0950705123006482"
         },
         {
           "title": "A survey on multi-label feature selection from perspectives of label fusion",
-          "authors": "Wenbin Qian (Advisor), Jintao Huang, Fankang Xu, Wenhao Shu, Weiping Ding",
+          "authors": "Wenbin Qian (Advisor), Jintao Huang, **Fankang Xu**, Wenhao Shu, Weiping Ding",
           "venue": "Information Fusion (INF) 2023",
           "url": "https://www.sciencedirect.com/science/article/pii/S1566253523002646"
         }
@@ -93,6 +94,7 @@
     },
     "labels": {
       "email": "Email",
+      "personalInfo": "Personal Info",
       "education": "Education",
       "skills": "Skills",
       "interests": "Interests",
@@ -112,68 +114,95 @@
     "left": {
       "avatar": {
         "type": "image",
-        "text": "AL",
-        "url": "avatar.svg"
+        "text": "徐凡康",
+        "url": "pic.jpg"
       },
-      "name": "Aldrin Lake",
-      "email": "aldrin.lake@email.com",
+      "name": "徐凡康",
+      "email": "frank.xu@njust.edu.cn",
       "googleScholar": {
         "label": "谷歌学术",
-        "url": "https://scholar.google.com/citations?user=example"
+        "url": "https://scholar.google.com/citations?user=51-LTWUAAAAJ&hl=zh-CN"
       },
       "github": {
         "label": "GitHub",
         "url": "https://github.com/AldrinLake"
       },
+      "personalInfo": ["出生年月：1999.05", "英语水平：CET-6", "技能认证：软件设计师（中级）"],
       "education": [
         {
-          "degree": "计算机科学博士",
-          "school": "加州大学伯克利分校",
-          "period": "2021 – 至今"
+          "degree": "计算机科学博士研究生",
+          "school": "南京理工大学",
+          "period": "2024.09 – 至今"
         },
         {
-          "degree": "软件工程学士",
-          "school": "浙江大学",
-          "period": "2017 – 2021"
+          "degree": "软件工程学士、硕士",
+          "school": "江西农业大学",
+          "period": "2017.06 – 2024.06"
         }
       ],
-      "skills": ["机器学习", "自然语言处理", "Python", "PyTorch", "数据分析"],
-      "interests": ["学术写作", "开源", "旅行", "摄影"]
+      "skills": ["软件设计师", "机器学习", "Python", "PyTorch", "数据分析"],
+      "interests": ["游泳", "滑雪", "音乐"]
     },
     "right": {
-      "about": "我专注于可信机器学习与高效 AI 系统研究，致力于将理论方法应用于真实场景，构建可靠、可落地的智能工具。",
+      "about": "我目前是南京理工大学计算机科学专业二年级博士研究生，导师为 [Zechao Li](https://gsmis.njust.edu.cn/open/TutorInfo.aspx?dsbh=0cp1q9!m33aFiXtUSaytcQ==&yxsh=z70ppxVSQAs=&zydm=SwsWR9zpmmw=)。我以第一作者身份在 CVPR 和 IEEE Transactions on Neural Networks and Learning Systems (TNNLS) 等会议与期刊发表研究成果。目前正在积极寻找具身智能与视觉-语言-动作模型相关的实习机会。",
       "researchInterests": [
-        "大语言模型对齐与评测。",
-        "高风险场景下的鲁棒与可解释机器学习。",
+        "机器学习，尤其是持续学习与具身终身学习。",
+        "知识发现：粒计算、粗糙集、特征选择等。",
         "基础模型的高效训练与部署。"
       ],
       "news": [
-        "2026.03：论文被 ACL 2026 录用。",
-        "2025.11：获得校级科研奖学金。",
-        "2025.07：开源 EvalBench 工具包。"
+        "2026/2.22 —— 论文“Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning”被 **CVPR 2026** 录用，祝贺！",
+        "2026/2.22 —— 论文“Class-Aware Drift Compensation for Non-Uniform Semantic Shift in Continual Learning”被 **CVPR (Finding) 2026** 录用，祝贺！",
+        "2025/12.19 —— 硕士学位论文获评江西省优秀硕士学位论文。",
+        "2025/09.07 —— 论文“Granular Ball-Guided Disambiguation for Partial Multilabel Feature Selection via Maximum Consistency Minimum Uncertainty”被 **IEEE TNNLS** 录用，祝贺！"
       ],
       "publications": [
         {
-          "title": "Reliable Evaluation Pipelines for LLM Agents",
-          "authors": "Aldrin Lake, Jane Smith, Wei Zhang",
-          "venue": "ACL 2026",
-          "url": "https://example.com/paper-1"
+          "title": "Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning",
+          "authors": "**Fankang Xu**, Lu Jin, Yanpeng Sun, Shiyu Xuan, Zechao Li（导师）",
+          "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition（CVPR）2026",
+          "url": ""
         },
         {
-          "title": "Data-Efficient Adaptation for Multilingual Foundation Models",
-          "authors": "Aldrin Lake, Ming Chen",
-          "venue": "EMNLP 2025",
-          "url": "https://example.com/paper-2"
+          "title": "Class-Aware Drift Compensation for Non-Uniform Semantic Shift in Continual Learning",
+          "authors": "**Fankang Xu**, Lu Jin, Yanpeng Sun, Shiyu Xuan, Zechao Li（导师）",
+          "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition（CVPR-Finding）2026",
+          "url": ""
+        },
+        {
+          "title": "Granular Ball-Guided Disambiguation for Partial Multilabel Feature Selection via Maximum Consistency Minimum Uncertainty",
+          "authors": "**Fankang Xu**, Wenbin Qian（导师）, Wenhao Shu, Jintao Huang, Weiping Ding, Shuyin Xia",
+          "venue": "IEEE Transactions on Neural Networks and Learning Systems（TNNLS）2025",
+          "url": "https://ieeexplore.ieee.org/abstract/document/11215838/"
+        },
+        {
+          "title": "Label Disambiguation-Based Feature Selection for Partial Multi-label Learning",
+          "authors": "**Fankang Xu**, Wenbin Qian（导师）, Xingxing Cai, Wenhao Shu, Jintao Huang, Yiu-Ming Cheung, Weiping Ding",
+          "venue": "International Conference on Pattern Recognition（ICPR）2024",
+          "url": "https://link.springer.com/chapter/10.1007/978-3-031-78183-4_17"
+        },
+        {
+          "title": "A novel granular ball computing-based fuzzy rough set for feature selection in label distribution learning",
+          "authors": "Wenbin Qian（导师）, **Fankang Xu**, Jintao Huang, Jin Qian",
+          "venue": "Knowledge-Based Systems（KBS）2023",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0950705123006482"
+        },
+        {
+          "title": "A survey on multi-label feature selection from perspectives of label fusion",
+          "authors": "Wenbin Qian（导师）, Jintao Huang, **Fankang Xu**, Wenhao Shu, Weiping Ding",
+          "venue": "Information Fusion（INF）2023",
+          "url": "https://www.sciencedirect.com/science/article/pii/S1566253523002646"
         }
       ],
       "honors": [
-        "优秀研究奖，2025",
-        "国家奖学金，2020"
+        "江西省优秀硕士学位论文，2025",
+        "优秀毕业生，2024"
       ],
-      "service": "我长期为 NLP 领域重要会议担任审稿人，并持续指导本科生科研实践。"
+      "service": "我担任 ICML、CVPR、NeurIPS、ICLR、ICCV、ECCV 以及 IEEE TNNLS 的审稿人。"
     },
     "labels": {
       "email": "邮箱",
+      "personalInfo": "个人信息",
       "education": "教育背景",
       "skills": "技能",
       "interests": "兴趣",

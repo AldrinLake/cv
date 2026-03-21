@@ -17,6 +17,66 @@
     return `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
   }
 
+  function sanitizeLinkUrl(url) {
+    if (!url) {
+      return '';
+    }
+
+    const rawUrl = String(url).trim();
+    if (!rawUrl) {
+      return '';
+    }
+
+    try {
+      const parsed = new URL(rawUrl, window.location.href);
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:' && parsed.protocol !== 'mailto:') {
+        return '';
+      }
+      return parsed.href;
+    } catch {
+      return '';
+    }
+  }
+
+  function renderRichText(value) {
+    const text = String(value || '');
+    if (text.length > 10000) {
+      return escapeHtml(text.slice(0, 10000));
+    }
+
+    const tokens = [];
+    const createToken = (html) => {
+      const token = `__RICH_TOKEN_${tokens.length}__`;
+      tokens.push({ token, html });
+      return token;
+    };
+
+    let formatted = text.replace(/\[([^\]\n]{1,200})\]\(([^)\s\n]{1,500})\)/g, (_, linkText, rawUrl) => {
+      const safeUrl = sanitizeLinkUrl(rawUrl);
+      if (!safeUrl) {
+        return linkText;
+      }
+      return createToken(`<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener">${escapeHtml(linkText)}</a>`);
+    });
+
+    formatted = formatted.replace(/\*\*([^*\n]{1,500})\*\*/g, (_, strongText) => {
+      return createToken(`<strong>${escapeHtml(strongText)}</strong>`);
+    });
+    formatted = formatted.replace(/\*([^*\n]{1,500})\*(?!\*)/g, (_, emText) => {
+      return createToken(`<em>${escapeHtml(emText)}</em>`);
+    });
+
+    let safe = escapeHtml(formatted);
+    tokens.forEach(({ token, html }) => {
+      safe = safe.replace(token, html);
+    });
+    return safe;
+  }
+
+  function renderRichList(items) {
+    return `<ul>${items.map((item) => `<li>${renderRichText(item)}</li>`).join('')}</ul>`;
+  }
+
   function renderEducation(educationList) {
     return educationList
       .map(
@@ -59,14 +119,21 @@
   function renderPublications(publications, labels) {
     return publications
       .map(
-        (pub) => `
+        (pub) => {
+          const paperUrl = sanitizeLinkUrl(pub.url);
+          return `
         <article class="publication-item">
-          <h3 class="pub-title">${escapeHtml(pub.title)}</h3>
-          <p class="pub-authors">${escapeHtml(pub.authors)}</p>
-          <p class="pub-venue">${escapeHtml(pub.venue)}</p>
-          <a class="paper-btn" href="${escapeHtml(pub.url)}" target="_blank" rel="noopener">${escapeHtml(labels.paperButton)}</a>
+          <h3 class="pub-title">${renderRichText(pub.title)}</h3>
+          <p class="pub-authors">${renderRichText(pub.authors)}</p>
+          <p class="pub-venue">${renderRichText(pub.venue)}</p>
+          ${
+            paperUrl
+              ? `<a class="paper-btn" href="${escapeHtml(paperUrl)}" target="_blank" rel="noopener">${escapeHtml(labels.paperButton)}</a>`
+              : ''
+          }
         </article>
-      `
+      `;
+        }
       )
       .join('');
   }
@@ -117,6 +184,17 @@
         <p class="contact-line"><a class="contact-link" href="${escapeHtml(left.github.url)}" target="_blank" rel="noopener">${getContactIcon('github')}<span>${escapeHtml(left.github.label)}</span></a></p>
       </section>
 
+      ${
+        left.personalInfo && left.personalInfo.length
+          ? `
+      <section>
+        <h2>${escapeHtml(labels.personalInfo)}</h2>
+        ${renderList(left.personalInfo)}
+      </section>
+      `
+          : ''
+      }
+
       <section>
         <h2>${escapeHtml(labels.education)}</h2>
         ${renderEducation(left.education)}
@@ -150,17 +228,17 @@
     content.innerHTML = `
       <section>
         <h2>${escapeHtml(labels.about)}</h2>
-        <p>${escapeHtml(right.about)}</p>
+        <p>${renderRichText(right.about)}</p>
       </section>
 
       <section>
         <h2>${escapeHtml(labels.researchInterests)}</h2>
-        ${renderList(right.researchInterests)}
+        ${renderRichList(right.researchInterests)}
       </section>
 
       <section>
         <h2>${escapeHtml(labels.news)}</h2>
-        ${renderList(right.news)}
+        ${renderRichList(right.news)}
       </section>
 
       <section>
@@ -175,7 +253,7 @@
 
       <section>
         <h2>${escapeHtml(labels.service)}</h2>
-        <p>${escapeHtml(right.service)}</p>
+        <p>${renderRichText(right.service)}</p>
       </section>
     `;
   }
