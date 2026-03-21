@@ -63,9 +63,31 @@
       .join('');
   }
 
+  function sanitizeAvatarUrl(url) {
+    if (!url) {
+      return '';
+    }
+
+    const rawUrl = String(url).trim();
+    if (!rawUrl) {
+      return '';
+    }
+
+    try {
+      const parsed = new URL(rawUrl, window.location.href);
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+        return '';
+      }
+      return escapeHtml(parsed.href);
+    } catch {
+      return '';
+    }
+  }
+
   function renderAvatar(avatar, name) {
-    if (avatar && avatar.type === 'image' && avatar.url) {
-      return `<img class="avatar-img" src="${escapeHtml(avatar.url)}" alt="${escapeHtml(name)}" loading="lazy" decoding="async">`;
+    const safeAvatarUrl = sanitizeAvatarUrl(avatar && avatar.url);
+    if (avatar && avatar.type === 'image' && safeAvatarUrl) {
+      return `<img class="avatar-img" src="${safeAvatarUrl}" alt="${escapeHtml(name)}" loading="lazy" decoding="async">`;
     }
 
     return escapeHtml((avatar && avatar.text) || '');
@@ -102,6 +124,20 @@
         ${renderList(left.interests)}
       </section>
     `;
+
+    const avatarImage = sidebar.querySelector('.avatar-img');
+    if (avatarImage) {
+      const fallbackText = (left.avatar && left.avatar.text) || '';
+      const showFallback = () => {
+        if (avatarImage.parentElement) {
+          avatarImage.parentElement.textContent = fallbackText;
+        }
+      };
+      avatarImage.addEventListener('error', showFallback, { once: true });
+      if (avatarImage.complete && avatarImage.naturalWidth === 0) {
+        showFallback();
+      }
+    }
 
     content.innerHTML = `
       <section>
