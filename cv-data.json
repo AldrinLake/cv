@@ -36,7 +36,7 @@
       "interests": ["Swimming", "Skiing", "Music"]
     },
     "right": {
-      "about": "I am currently a second-year Ph.D. student at Nanjing University of Science and Technology, supervised by Prof. Zechao Li. My research work has been published as a first author in venues such as CVPR and IEEE Transactions on Neural Networks and Learning Systems (TNNLS). I am actively seeking an internship opportunity related to embodied intelligence and vision-language-action models.",
+      "about": "I am currently a second-year Ph.D. student at Nanjing University of Science and Technology, supervised by Prof. [Zechao Li](https://gsmis.njust.edu.cn/open/TutorInfo.aspx?dsbh=0cp1q9!m33aFiXtUSaytcQ==&yxsh=z70ppxVSQAs=&zydm=SwsWR9zpmmw=). My research work has been published as a first author in venues such as CVPR and IEEE Transactions on Neural Networks and Learning Systems (TNNLS). I am actively seeking an internship opportunity related to embodied intelligence and vision-language-action models.",
       "researchInterests": [
         "Machine learning, particularly continual learning, embodied lifelong learning.",
         "Knowledge Discovery: Granular Computing, Rough Sets, Feature Selection, etc.",
@@ -45,7 +45,7 @@
       "news": [
         "2026/2.22 -- Our paper \"Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning\" is accepted by **CVPR 2026**. Congrats.",
         "2026/2.22 -- Our paper \"Class-Aware Drift Compensation for Non-Uniform Semantic Shift in Continual Learning\" is accepted by **CVPR (Finding) 2026**. Congrats.",
-        "2025/12.19 -- It is a great honor that the master's thesis was awarded the Excellent Master's Thesis of Jiangxi Province.",
+        "2025/12.19 -- It is a great honor that the master's thesis was awarded the **Excellent Master's Thesis of Jiangxi Province**.",
         "2025/09.07 -- Our paper \"Granular Ball-Guided Disambiguation for Partial Multilabel Feature Selection via Maximum Consistency Minimum Uncertainty\" is accepted by **IEEE TNNLS**. Congrats."
       ],
       "publications": [
@@ -144,7 +144,7 @@
       "interests": ["游泳", "滑雪", "音乐"]
     },
     "right": {
-      "about": "我目前是南京理工大学计算机科学专业二年级博士研究生，导师为 [Zechao Li](https://gsmis.njust.edu.cn/open/TutorInfo.aspx?dsbh=0cp1q9!m33aFiXtUSaytcQ==&yxsh=z70ppxVSQAs=&zydm=SwsWR9zpmmw=)。我以第一作者身份在 CVPR 和 IEEE Transactions on Neural Networks and Learning Systems (TNNLS) 等会议与期刊发表研究成果。目前正在积极寻找具身智能与视觉-语言-动作模型相关的实习机会。",
+      "about": "我目前是南京理工大学计算机科学专业二年级博士研究生，导师为 [李泽超](https://gsmis.njust.edu.cn/open/TutorInfo.aspx?dsbh=0cp1q9!m33aFiXtUSaytcQ==&yxsh=z70ppxVSQAs=&zydm=SwsWR9zpmmw=)教授。我以第一作者身份在 CVPR 和 IEEE Transactions on Neural Networks and Learning Systems (TNNLS) 等会议与期刊发表研究成果。目前正在积极寻找具身智能与视觉-语言-动作模型相关的实习机会。",
       "researchInterests": [
         "机器学习，尤其是持续学习与具身终身学习。",
         "知识发现：粒计算、粗糙集、特征选择等。",
@@ -153,7 +153,7 @@
       "news": [
         "2026/2.22 —— 论文“Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning”被 **CVPR 2026** 录用，祝贺！",
         "2026/2.22 —— 论文“Class-Aware Drift Compensation for Non-Uniform Semantic Shift in Continual Learning”被 **CVPR (Finding) 2026** 录用，祝贺！",
-        "2025/12.19 —— 硕士学位论文获评江西省优秀硕士学位论文。",
+        "2025/12.19 —— 硕士学位论文获评**江西省优秀硕士学位论文**。",
         "2025/09.07 —— 论文“Granular Ball-Guided Disambiguation for Partial Multilabel Feature Selection via Maximum Consistency Minimum Uncertainty”被 **IEEE TNNLS** 录用，祝贺！"
       ],
       "publications": [
