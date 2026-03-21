@@ -5,8 +5,9 @@
     },
     "left": {
       "avatar": {
-        "type": "initials",
-        "text": "AL"
+        "type": "image",
+        "text": "AL",
+        "url": "https://avatars.githubusercontent.com/u/44920471?v=4"
       },
       "name": "Aldrin Lake",
       "email": "aldrin.lake@email.com",
@@ -85,8 +86,9 @@
     },
     "left": {
       "avatar": {
-        "type": "initials",
-        "text": "AL"
+        "type": "image",
+        "text": "AL",
+        "url": "https://avatars.githubusercontent.com/u/44920471?v=4"
       },
       "name": "Aldrin Lake",
       "email": "aldrin.lake@email.com",

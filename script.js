@@ -63,6 +63,14 @@
       .join('');
   }
 
+  function renderAvatar(avatar, name) {
+    if (avatar && avatar.type === 'image' && avatar.url) {
+      return `<img class="avatar-img" src="${escapeHtml(avatar.url)}" alt="${escapeHtml(name)}" loading="lazy" decoding="async">`;
+    }
+
+    return escapeHtml((avatar && avatar.text) || '');
+  }
+
   function render(data, lang) {
     const { left, right, labels, meta } = data;
 
@@ -72,7 +80,7 @@
 
     sidebar.innerHTML = `
       <section class="profile-card">
-        <div class="avatar" aria-label="Avatar">${escapeHtml(left.avatar.text)}</div>
+        <div class="avatar" aria-label="Avatar">${renderAvatar(left.avatar, left.name)}</div>
         <h2 class="name">${escapeHtml(left.name)}</h2>
         <p class="contact-line"><span>${escapeHtml(labels.email)}:</span> <a href="mailto:${escapeHtml(left.email)}">${escapeHtml(left.email)}</a></p>
         <p class="contact-line"><a class="contact-link" href="${escapeHtml(left.googleScholar.url)}" target="_blank" rel="noopener">${getContactIcon('googleScholar')}<span>${escapeHtml(left.googleScholar.label)}</span></a></p>
