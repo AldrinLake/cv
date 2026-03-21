@@ -22,4 +22,5 @@ https://aldrinlake.github.io/cv/
 ## Customising
 
 Edit `cv-data.json` to update CV content and both language versions.  
+Set both `left.avatar.type` to `image` and `left.avatar.url` (e.g. `avatar.svg`) in `cv-data.json` to use an image avatar, and keep `left.avatar.text` as fallback initials if the image is unavailable.  
 Edit `style.css` to change colours or layout.
