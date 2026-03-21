@@ -1,0 +1,162 @@
+{
+  "en": {
+    "meta": {
+      "pageTitle": "Curriculum Vitae"
+    },
+    "left": {
+      "avatar": {
+        "type": "initials",
+        "text": "AL"
+      },
+      "name": "Aldrin Lake",
+      "email": "aldrin.lake@email.com",
+      "googleScholar": {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=example"
+      },
+      "github": {
+        "label": "GitHub",
+        "url": "https://github.com/AldrinLake"
+      },
+      "education": [
+        {
+          "degree": "Ph.D. in Computer Science",
+          "school": "University of California, Berkeley",
+          "period": "2021 – Present"
+        },
+        {
+          "degree": "B.Eng. in Software Engineering",
+          "school": "Zhejiang University",
+          "period": "2017 – 2021"
+        }
+      ],
+      "skills": ["Machine Learning", "Natural Language Processing", "Python", "PyTorch", "Data Analysis"],
+      "interests": ["Academic Writing", "Open Source", "Travel", "Photography"]
+    },
+    "right": {
+      "about": "I am a researcher focused on trustworthy machine learning and efficient AI systems. My work bridges theory and practical applications to build reliable tools for real-world use.",
+      "researchInterests": [
+        "Large language model alignment and evaluation.",
+        "Robust and explainable machine learning for high-stakes domains.",
+        "Efficient training and deployment of foundation models."
+      ],
+      "news": [
+        "2026.03: One paper accepted by ACL 2026.",
+        "2025.11: Received the University Research Fellowship.",
+        "2025.07: Open-sourced the EvalBench toolkit."
+      ],
+      "publications": [
+        {
+          "title": "Reliable Evaluation Pipelines for LLM Agents",
+          "authors": "Aldrin Lake, Jane Smith, Wei Zhang",
+          "venue": "ACL 2026",
+          "url": "https://example.com/paper-1"
+        },
+        {
+          "title": "Data-Efficient Adaptation for Multilingual Foundation Models",
+          "authors": "Aldrin Lake, Ming Chen",
+          "venue": "EMNLP 2025",
+          "url": "https://example.com/paper-2"
+        }
+      ],
+      "honors": [
+        "Outstanding Graduate Research Award, 2025",
+        "National Scholarship, 2020"
+      ],
+      "service": "I regularly review for major NLP conferences and mentor undergraduate students in research projects."
+    },
+    "labels": {
+      "email": "Email",
+      "education": "Education",
+      "skills": "Skills",
+      "interests": "Interests",
+      "about": "About Me",
+      "researchInterests": "Research Interests",
+      "news": "News",
+      "publications": "Publications",
+      "honors": "Honors and Awards",
+      "service": "Service",
+      "paperButton": "Paper"
+    }
+  },
+  "zh": {
+    "meta": {
+      "pageTitle": "个人简历"
+    },
+    "left": {
+      "avatar": {
+        "type": "initials",
+        "text": "AL"
+      },
+      "name": "Aldrin Lake",
+      "email": "aldrin.lake@email.com",
+      "googleScholar": {
+        "label": "谷歌学术",
+        "url": "https://scholar.google.com/citations?user=example"
+      },
+      "github": {
+        "label": "GitHub",
+        "url": "https://github.com/AldrinLake"
+      },
+      "education": [
+        {
+          "degree": "计算机科学博士",
+          "school": "加州大学伯克利分校",
+          "period": "2021 – 至今"
+        },
+        {
+          "degree": "软件工程学士",
+          "school": "浙江大学",
+          "period": "2017 – 2021"
+        }
+      ],
+      "skills": ["机器学习", "自然语言处理", "Python", "PyTorch", "数据分析"],
+      "interests": ["学术写作", "开源", "旅行", "摄影"]
+    },
+    "right": {
+      "about": "我专注于可信机器学习与高效 AI 系统研究，致力于将理论方法应用于真实场景，构建可靠、可落地的智能工具。",
+      "researchInterests": [
+        "大语言模型对齐与评测。",
+        "高风险场景下的鲁棒与可解释机器学习。",
+        "基础模型的高效训练与部署。"
+      ],
+      "news": [
+        "2026.03：论文被 ACL 2026 录用。",
+        "2025.11：获得校级科研奖学金。",
+        "2025.07：开源 EvalBench 工具包。"
+      ],
+      "publications": [
+        {
+          "title": "Reliable Evaluation Pipelines for LLM Agents",
+          "authors": "Aldrin Lake, Jane Smith, Wei Zhang",
+          "venue": "ACL 2026",
+          "url": "https://example.com/paper-1"
+        },
+        {
+          "title": "Data-Efficient Adaptation for Multilingual Foundation Models",
+          "authors": "Aldrin Lake, Ming Chen",
+          "venue": "EMNLP 2025",
+          "url": "https://example.com/paper-2"
+        }
+      ],
+      "honors": [
+        "优秀研究奖，2025",
+        "国家奖学金，2020"
+      ],
+      "service": "我长期为 NLP 领域重要会议担任审稿人，并持续指导本科生科研实践。"
+    },
+    "labels": {
+      "email": "邮箱",
+      "education": "教育背景",
+      "skills": "技能",
+      "interests": "兴趣",
+      "about": "关于我",
+      "researchInterests": "研究兴趣",
+      "news": "新闻",
+      "publications": "论文发表",
+      "honors": "荣誉与奖项",
+      "service": "社会服务",
+      "paperButton": "论文链接"
+    }
+  }
+}
