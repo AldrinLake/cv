@@ -40,24 +40,35 @@
 
   function renderRichText(value) {
     const text = String(value || '');
-    const links = [];
-    const withLinkTokens = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, linkText, rawUrl) => {
-      const safeUrl = sanitizeLinkUrl(rawUrl);
-      const safeText = escapeHtml(linkText);
-      if (!safeUrl) {
-        return safeText;
-      }
-      const token = `__LINK_TOKEN_${links.length}__`;
-      links.push(`<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener">${safeText}</a>`);
+    if (text.length > 10000) {
+      return escapeHtml(text.slice(0, 10000));
+    }
+
+    const tokens = [];
+    const createToken = (html) => {
+      const token = `__RICH_TOKEN_${tokens.length}__`;
+      tokens.push({ token, html });
       return token;
+    };
+
+    let formatted = text.replace(/\[([^\]\n]{1,200})\]\(([^)\s\n]{1,500})\)/g, (_, linkText, rawUrl) => {
+      const safeUrl = sanitizeLinkUrl(rawUrl);
+      if (!safeUrl) {
+        return linkText;
+      }
+      return createToken(`<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener">${escapeHtml(linkText)}</a>`);
     });
 
-    let safe = escapeHtml(withLinkTokens);
-    safe = safe.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-    safe = safe.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+    formatted = formatted.replace(/\*\*([^*\n]{1,500})\*\*/g, (_, strongText) => {
+      return createToken(`<strong>${escapeHtml(strongText)}</strong>`);
+    });
+    formatted = formatted.replace(/\*([^*\n]{1,500})\*(?!\*)/g, (_, emText) => {
+      return createToken(`<em>${escapeHtml(emText)}</em>`);
+    });
 
-    links.forEach((html, index) => {
-      safe = safe.replace(`__LINK_TOKEN_${index}__`, html);
+    let safe = escapeHtml(formatted);
+    tokens.forEach(({ token, html }) => {
+      safe = safe.replace(token, html);
     });
     return safe;
   }
@@ -108,18 +119,21 @@
   function renderPublications(publications, labels) {
     return publications
       .map(
-        (pub) => `
+        (pub) => {
+          const paperUrl = sanitizeLinkUrl(pub.url);
+          return `
         <article class="publication-item">
           <h3 class="pub-title">${renderRichText(pub.title)}</h3>
           <p class="pub-authors">${renderRichText(pub.authors)}</p>
           <p class="pub-venue">${renderRichText(pub.venue)}</p>
           ${
-            sanitizeLinkUrl(pub.url)
-              ? `<a class="paper-btn" href="${escapeHtml(sanitizeLinkUrl(pub.url))}" target="_blank" rel="noopener">${escapeHtml(labels.paperButton)}</a>`
+            paperUrl
+              ? `<a class="paper-btn" href="${escapeHtml(paperUrl)}" target="_blank" rel="noopener">${escapeHtml(labels.paperButton)}</a>`
               : ''
           }
         </article>
-      `
+      `;
+        }
       )
       .join('');
   }
