@@ -32,6 +32,14 @@
   }
 
   function getContactIcon(type) {
+    if (type === 'email') {
+      return `
+        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 6.75A2.25 2.25 0 0 1 5.25 4.5h13.5A2.25 2.25 0 0 1 21 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 17.25V6.75Zm2.1-.75 6.9 5.36L18.9 6H5.1Zm13.4 1.92-5.74 4.46a1.2 1.2 0 0 1-1.52 0L5.5 7.92v9.33c0 .14.11.25.25.25h12.5c.14 0 .25-.11.25-.25V7.92Z" fill="currentColor"></path>
+        </svg>
+      `;
+    }
+
     if (type === 'googleScholar') {
       return `
         <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -104,7 +112,7 @@
       <section class="profile-card">
         <div class="avatar" aria-label="Avatar">${renderAvatar(left.avatar, left.name)}</div>
         <h2 class="name">${escapeHtml(left.name)}</h2>
-        <p class="contact-line"><span>${escapeHtml(labels.email)}:</span> <a href="mailto:${escapeHtml(left.email)}">${escapeHtml(left.email)}</a></p>
+        <p class="contact-line"><a class="contact-link" href="mailto:${escapeHtml(left.email)}">${getContactIcon('email')}<span>${escapeHtml(labels.email)}: ${escapeHtml(left.email)}</span></a></p>
         <p class="contact-line"><a class="contact-link" href="${escapeHtml(left.googleScholar.url)}" target="_blank" rel="noopener">${getContactIcon('googleScholar')}<span>${escapeHtml(left.googleScholar.label)}</span></a></p>
         <p class="contact-line"><a class="contact-link" href="${escapeHtml(left.github.url)}" target="_blank" rel="noopener">${getContactIcon('github')}<span>${escapeHtml(left.github.label)}</span></a></p>
       </section>
