@@ -130,6 +130,18 @@ body {
   text-decoration: none;
 }
 
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
 .sidebar ul,
 .content ul {
   list-style: none;
