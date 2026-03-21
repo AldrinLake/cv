@@ -87,7 +87,7 @@ body {
 .sidebar h2,
 .content h2 {
   font-size: 0.84rem;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   letter-spacing: 0.08em;
   margin-bottom: 10px;
 }

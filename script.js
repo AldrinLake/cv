@@ -189,7 +189,7 @@
     })
     .then((data) => {
       window.__cvData = data;
-      let currentLang = 'zh';
+      let currentLang = 'en';
 
       function setLanguage(lang) {
         currentLang = lang;
