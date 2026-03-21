@@ -152,10 +152,10 @@
       "interests": "兴趣",
       "about": "关于我",
       "researchInterests": "研究兴趣",
-      "news": "News",
-      "publications": "Publications",
-      "honors": "Honors and Awards",
-      "service": "Service",
+      "news": "新闻",
+      "publications": "论文发表",
+      "honors": "荣誉与奖项",
+      "service": "社会服务",
       "paperButton": "论文链接"
     }
   }
