@@ -17,6 +17,55 @@
     return `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
   }
 
+  function sanitizeLinkUrl(url) {
+    if (!url) {
+      return '';
+    }
+
+    const rawUrl = String(url).trim();
+    if (!rawUrl) {
+      return '';
+    }
+
+    try {
+      const parsed = new URL(rawUrl, window.location.href);
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:' && parsed.protocol !== 'mailto:') {
+        return '';
+      }
+      return parsed.href;
+    } catch {
+      return '';
+    }
+  }
+
+  function renderRichText(value) {
+    const text = String(value || '');
+    const links = [];
+    const withLinkTokens = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, linkText, rawUrl) => {
+      const safeUrl = sanitizeLinkUrl(rawUrl);
+      const safeText = escapeHtml(linkText);
+      if (!safeUrl) {
+        return safeText;
+      }
+      const token = `__LINK_TOKEN_${links.length}__`;
+      links.push(`<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener">${safeText}</a>`);
+      return token;
+    });
+
+    let safe = escapeHtml(withLinkTokens);
+    safe = safe.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    safe = safe.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+    links.forEach((html, index) => {
+      safe = safe.replace(`__LINK_TOKEN_${index}__`, html);
+    });
+    return safe;
+  }
+
+  function renderRichList(items) {
+    return `<ul>${items.map((item) => `<li>${renderRichText(item)}</li>`).join('')}</ul>`;
+  }
+
   function renderEducation(educationList) {
     return educationList
       .map(
@@ -61,10 +110,14 @@
       .map(
         (pub) => `
         <article class="publication-item">
-          <h3 class="pub-title">${escapeHtml(pub.title)}</h3>
-          <p class="pub-authors">${escapeHtml(pub.authors)}</p>
-          <p class="pub-venue">${escapeHtml(pub.venue)}</p>
-          <a class="paper-btn" href="${escapeHtml(pub.url)}" target="_blank" rel="noopener">${escapeHtml(labels.paperButton)}</a>
+          <h3 class="pub-title">${renderRichText(pub.title)}</h3>
+          <p class="pub-authors">${renderRichText(pub.authors)}</p>
+          <p class="pub-venue">${renderRichText(pub.venue)}</p>
+          ${
+            sanitizeLinkUrl(pub.url)
+              ? `<a class="paper-btn" href="${escapeHtml(sanitizeLinkUrl(pub.url))}" target="_blank" rel="noopener">${escapeHtml(labels.paperButton)}</a>`
+              : ''
+          }
         </article>
       `
       )
@@ -117,6 +170,17 @@
         <p class="contact-line"><a class="contact-link" href="${escapeHtml(left.github.url)}" target="_blank" rel="noopener">${getContactIcon('github')}<span>${escapeHtml(left.github.label)}</span></a></p>
       </section>
 
+      ${
+        left.personalInfo && left.personalInfo.length
+          ? `
+      <section>
+        <h2>${escapeHtml(labels.personalInfo)}</h2>
+        ${renderList(left.personalInfo)}
+      </section>
+      `
+          : ''
+      }
+
       <section>
         <h2>${escapeHtml(labels.education)}</h2>
         ${renderEducation(left.education)}
@@ -150,17 +214,17 @@
     content.innerHTML = `
       <section>
         <h2>${escapeHtml(labels.about)}</h2>
-        <p>${escapeHtml(right.about)}</p>
+        <p>${renderRichText(right.about)}</p>
       </section>
 
       <section>
         <h2>${escapeHtml(labels.researchInterests)}</h2>
-        ${renderList(right.researchInterests)}
+        ${renderRichList(right.researchInterests)}
       </section>
 
       <section>
         <h2>${escapeHtml(labels.news)}</h2>
-        ${renderList(right.news)}
+        ${renderRichList(right.news)}
       </section>
 
       <section>
@@ -175,7 +239,7 @@
 
       <section>
         <h2>${escapeHtml(labels.service)}</h2>
-        <p>${escapeHtml(right.service)}</p>
+        <p>${renderRichText(right.service)}</p>
       </section>
     `;
   }
