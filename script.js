@@ -112,7 +112,7 @@
       <section class="profile-card">
         <div class="avatar" aria-label="Avatar">${renderAvatar(left.avatar, left.name)}</div>
         <h2 class="name">${escapeHtml(left.name)}</h2>
-        <p class="contact-line"><a class="contact-link" href="mailto:${escapeHtml(left.email)}">${getContactIcon('email')}<span>${escapeHtml(labels.email)}: ${escapeHtml(left.email)}</span></a></p>
+        <p class="contact-line"><a class="contact-link" href="mailto:${escapeHtml(left.email)}" aria-label="${escapeHtml(labels.email)}: ${escapeHtml(left.email)}">${getContactIcon('email')}<span>${escapeHtml(left.email)}</span></a></p>
         <p class="contact-line"><a class="contact-link" href="${escapeHtml(left.googleScholar.url)}" target="_blank" rel="noopener">${getContactIcon('googleScholar')}<span>${escapeHtml(left.googleScholar.label)}</span></a></p>
         <p class="contact-line"><a class="contact-link" href="${escapeHtml(left.github.url)}" target="_blank" rel="noopener">${getContactIcon('github')}<span>${escapeHtml(left.github.label)}</span></a></p>
       </section>
